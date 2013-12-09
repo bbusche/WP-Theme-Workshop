@@ -1,0 +1,37 @@
+/*
+	Theme Name: Custom Bootstrap
+	Theme URI: http://www.rendition.net
+	Description: Responsive Bootstrap Theme starter.
+	Author: Brian Busche
+	Author URI: http://rendition.net/
+	Version: 1.0
+	Tags: responsive, bootstrap
+
+	License: Mine!	
+	I made this to learn theme development using Bootstrap.
+*/
+
+@import url('bootstrap/css/bootstrap.css'); 
+@import url('bootstrap/css/bootstrap-responsive.css'); 
+
+body { 
+     padding-top: 60px; 
+     padding-bottom: 40px; 
+}
+
+.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus,
+.navbar-inverse .nav .current_page_item a,
+.navbar-inverse .nav .current_page_item a:hover,
+.navbar-inverse .nav .current_page_item a:focus,
+.navbar-inverse .nav .current_page_parent a,
+.navbar-inverse .nav .current_page_parent a:hover,
+.navbar-inverse .nav .current_page_parent a:focus {
+  color: #ffffff;
+  background-color: #111111;
+}
+
+/*  Trying to accomodate the WP Admin bar so it doesn't invade menu */
+ .navbar-fixed-top { top: 0px; }
+ body.admin-bar .navbar-fixed-top { top: 28px !important; }
