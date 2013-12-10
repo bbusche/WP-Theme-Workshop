@@ -5,7 +5,6 @@ Template Name: Posts Page
 ?>
 <?php get_header(); ?>
 <div class="container">
-
       <div class="jumbotron">
 		    <h1>News Page</h1>  
 		    <p>This is a listing of all the posts</p>
@@ -23,11 +22,8 @@ Template Name: Posts Page
         </div><!--/span-->
         <?php endwhile; else: ?>
 		  <p><?php _e('Sorry, this page does not exist.'); ?></p>
-		<?php endif; ?>
-		
-       
-      </div>
-	
+		<?php endif; ?>       
+      </div>	
 </div>
 
 <?php get_footer(); ?>

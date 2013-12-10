@@ -14,7 +14,7 @@
 @import url('dist/css/bootstrap.css'); 
 @import url('dist/css/bootstrap-responsive.css'); 
 
-.page-template-default, .page-template-page-sidebar-php { 
+.page-template-default, .page-template-page-sidebar-php, .single-format-standard { 
      padding-top: 60px; 
      padding-bottom: 40px; 
 }
