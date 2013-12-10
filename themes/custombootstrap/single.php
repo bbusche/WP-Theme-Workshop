@@ -10,7 +10,7 @@ Template Name: Single
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		    <h1><?php the_title(); ?></h1> 
+		    <h1><?php the_title(); ?> (Single Page Template)</h1> 
 		    <p><em><?php the_time('l, F jS, Y'); ?></em></p> 
 		    
 		    <?php the_content(); ?>
@@ -23,7 +23,7 @@ Template Name: Single
 
   </div>
   <div class="span4">
-  		<?php get_sidebar(); ?>	
+  		<?php get_sidebar(); ?>	  		
   </div>
 </div>
 

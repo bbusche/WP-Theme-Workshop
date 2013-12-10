@@ -10,8 +10,10 @@
 
     <title>Carousel Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS 
     <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+    -->
+    <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet"> 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -22,12 +24,17 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <!-- Custom styles for this template
+    <link href="carousel.css" rel="stylesheet"> 
+    -->
+    <link href="<?php echo get_template_directory_uri(); ?>/dist/css/carousel.css" rel="stylesheet"> 
+
+    <?php wp_enqueue_script("jquery"); ?>
+    <?php wp_head(); ?>
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
+  <body <?php body_class(); ?>>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -40,10 +47,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Project name</a>
+              <a class="navbar-brand" href="<?php echo site_url(); ?>">Project name</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
+                <?php wp_list_pages(array('title_li' => '', 'depth' => 1, 'exclude' => '5')); ?>
+                <!--
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -57,7 +66,7 @@
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
-                  </ul>
+                  </ul> -->
                 </li>
               </ul>
             </div>
