@@ -18,3 +18,21 @@
      padding-top: 60px; 
      padding-bottom: 40px; 
 }
+
+.form-allowed-tags{
+	max-width: 320px; 
+}
+
+
+.page-template-single-php, .blog{
+	padding-top: 100px;
+}
+
+#main-nav {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  float: right;
+  bottom: 15px;
+  margin-top: 200px;
+}

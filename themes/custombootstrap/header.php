@@ -7,8 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
-
-    <title>Carousel Template for Bootstrap</title>
+    <?php
+      $site_title = get_bloginfo( 'name' );
+      $site_description = get_bloginfo( 'description' );
+    ?>
+    <title><?php echo $site_title; ?></title>
 
     <!-- Bootstrap core CSS 
     <link href="../../dist/css/bootstrap.css" rel="stylesheet">
@@ -38,7 +41,7 @@
     <div class="navbar-wrapper">
       <div class="container">
 
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,11 +50,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="<?php echo site_url(); ?>">Project name</a>
+              <a class="navbar-brand" href="<?php echo site_url(); ?>"><?php echo $site_title; ?></a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <?php wp_list_pages(array('title_li' => '', 'depth' => 1, 'exclude' => '5')); ?>
+                <?php 
+                if ( has_nav_menu( 'primary' ) ) {
+                  wp_nav_menu( array(
+                    'theme_location'  => 'primary',
+                    'container'       => false,
+                    'menu_class'      => 'nav navbar-nav navbar-main',
+                    'fallback_cb'     => 'wp_page_menu'
+                    )
+                  ); 
+                }else{
+                  wp_list_pages(array('title_li' => '', 'depth' => 1, 'exclude' => '701'));
+                }
+                ?>
                 <!--
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>

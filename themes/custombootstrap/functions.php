@@ -26,4 +26,15 @@ if ( function_exists('register_sidebar') ){
 		'after_title' => '</h3>'
 	));
 }
+
+// Register menus
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'primary' => __( 'Primary Menu' ),
+      'extra-menu' => __( 'Extra Menu' )
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
 ?>

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Page
+Template Name: Blog Sidebar Page
 */
 ?>
 <?php get_header(); ?>
@@ -19,16 +19,16 @@ Template Name: Home Page
           
           <div class="row">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <div class="col-xs-12">
+            <div class="col-6 col-sm-6 col-lg-4">
               <h2><?php the_title(); ?> </h2>
               <p><em><?php the_time('l, F jS, Y'); ?></em></p> 
               <p><?php the_content(); ?></p>
-              <p><a class="btn btn-default" href="<?php the_permalink(); ?>" role="button">View details »</a></p>
-                <?php comments_template(); ?>
-                  
-                </div><!--/span-->
-                <?php endwhile; else: ?>
-              <p><?php _e('Sorry, this page does not exist.'); ?></p>
+          <p><a class="btn btn-default" href="<?php the_permalink(); ?>" role="button">View details »</a></p>
+            <?php comments_template(); ?>
+              
+            </div><!--/span-->
+            <?php endwhile; else: ?>
+          <p><?php _e('Sorry, this page does not exist.'); ?></p>
             <?php endif; ?>       
           </div><!--/row-->
         </div><!--/span-->
@@ -37,7 +37,7 @@ Template Name: Home Page
           <?php get_sidebar(); ?>
       </div>
     </div>
-  
+	
 </div>
 
 <?php get_footer(); ?>
